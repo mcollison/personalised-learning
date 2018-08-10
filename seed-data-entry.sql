@@ -21,6 +21,12 @@ INSERT INTO `questions` (QuizID, QuestionTitle, QuestionText, QAnswer) VALUES
     'System.out.println'
   ),
   (
+    (SELECT QuizID FROM quizzes WHERE QuizTitle = 'Interfaces and Generics'),
+    'test-interfaces-question',
+    'What is an interface?',
+    'A class declaration without implemented methods that can facilitate multiple inheritance.'
+  ),
+  (
     (SELECT QuizID FROM quizzes WHERE QuizTitle = 'Introduction to programming - Recap'),
     'recap-q1.1',
     'In the following code, the one line starting with // is highlighted in red. What does this line mean to Java?\n    <br />\n    <code>public static void main(String[] args) {\n    double taxRate = 0.15;\n    int income = 40000;\n    int deduction = 10000;\n    /',
