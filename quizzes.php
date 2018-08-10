@@ -7,7 +7,7 @@ include 'navbar.php';
 
 <?php
 if (isset($_GET['quiz'])) {
-    echo $_GET['quiz'];
+    include 'quiz-layout-angular.php';
 } else {
     include 'quizzes-summary.php';
 }
