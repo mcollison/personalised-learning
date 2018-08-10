@@ -22,9 +22,8 @@
                     </li>
                     <li><a href="#">Results</a>
                     </li>
-<!-- EXAMPLE OF DROPDOWN -->
-<!--                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown-example<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a>
                             </li>
@@ -40,7 +39,6 @@
                             </li>
                         </ul>
                     </li>
--->
                 </ul>
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">
