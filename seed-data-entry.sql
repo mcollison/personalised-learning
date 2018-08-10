@@ -1,4 +1,5 @@
 
+USE ComputingIA
 
 /* Quiz seed */
 INSERT INTO `quizzes` (QuizTitle, ModuleID) VALUES
