@@ -23,10 +23,10 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-      echo "<div class=\"col-sm-4\">"
-      echo "<a href=\"content.html\"> <i class=\"fas fa-database\"></i> </a>" //update this for relevant icon once db scema is updated to store icon link
+      echo "<div class=\"col-sm-4\">";
+      echo "<a href=\"./quizzes/\"" . $row["QuizID"] . "> <i class=\"fas fa-question-circle\"></i> </a>"; 
       echo "<p>" .  $row["QuizTitle"] . " <br \>";
-      echo "</div>"
+      echo "</div>";
     }
 } else {
     echo "There are currently no quizzes. ";
