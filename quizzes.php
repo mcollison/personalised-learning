@@ -9,7 +9,7 @@ include 'navbar.php';
 if (isset($_GET['quiz'])) {
     echo $_GET['quiz'];
 } else {
-    include 'quizzes-summary.php'
+    include 'quizzes-summary.php';
 }
 ?>
 

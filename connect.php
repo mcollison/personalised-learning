@@ -1,5 +1,5 @@
 <?php
-session_start(); //Starts PhP Session
+//session_start(); //Starts PhP Session
 //* Database credentials. Assuming you are running MySQL
 //server with default setting (user 'root' with no password)
 //https://www.tutorialspoint.com/php/php_mysql_login.htm*/
