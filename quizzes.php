@@ -21,7 +21,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["QuizID"]. " - Name: " . $row["QuizTitle"]. " " . $row["QuixText"]. "<br>";
+        echo "id: " . $row["QuizID"]. " - Name: " . $row["QuizTitle"]. " " . "<br>";
     }
 } else {
     echo "0 results";
