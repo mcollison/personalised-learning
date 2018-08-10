@@ -7,23 +7,23 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <!-- THIS PART NEEDS UPDATING -->
-            <a class="navbar-brand" href="../HTML/homepage.html">C:IA</a>
-        <!-- THIS PART NEEDS UPDATING -->
+            <a class="navbar-brand" href="#">Sitename</a>
         </div>
         <center>
             <div class="navbar-collapse collapse" id="navbar-main">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a>
+                    <li class="active"><a href="#">Link</a>
                     </li>
-                    <li><a href="#">Content</a>
+                    <li><a href="#">Link</a>
                     </li>
-                    <li><a href="#">Quizzes</a>
+                    <li><a href="#">Link</a>
                     </li>
-                    <li><a href="#">Results</a>
+                    <li><a href="#">Link</a>
+                    </li>
+                    <li><a href="#">Link</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown-example<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a>
                             </li>
