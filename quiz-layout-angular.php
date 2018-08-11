@@ -20,8 +20,8 @@ if ($result->num_rows > 0) {
 <div class="container">
 
 <!-- Nav tabs -->
-<form action="/form-processing.php">
-<nav class="navbar navbar-light bg-light">
+<form action="/quiz-processing.php" method="POST">
+<nav class="navbar navbar-light bg-white">
 <ul class="nav nav-tabs" id="myTab" role="tablist">
 
 <?php
@@ -41,9 +41,7 @@ echo "<li class=\"nav-item\"><a class=\"nav-link\" id=\"home-tab-$i\" data-toggl
 }
 ?>
 </ul>
-<a class="navbar-brand" href="#">
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-</a>
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit Quiz</button>
 </nav>
 
   <!-- Form mapping needs updating to quiz form processing -->
