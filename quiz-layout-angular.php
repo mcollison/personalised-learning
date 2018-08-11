@@ -20,6 +20,8 @@ if ($result->num_rows > 0) {
 <div class="container">
 
 <!-- Nav tabs -->
+<form action="/form-processing.php">
+<nav class="navbar navbar-light bg-light">
 <ul class="nav nav-tabs" id="myTab" role="tablist">
 
 <?php
@@ -39,9 +41,12 @@ echo "<li class=\"nav-item\"><a class=\"nav-link\" id=\"home-tab-$i\" data-toggl
 }
 ?>
 </ul>
+<a class="navbar-brand" href="#">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</a>
+</nav>
 
   <!-- Form mapping needs updating to quiz form processing -->
-  <form action="/form-processing.php">
   <div class="tab-content">
     <div class="tab-pane active" id="home-1" role="tabpanel" aria-labelledby="home-tab-1">
 <?php
@@ -60,7 +65,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
       if ($row["QuestionID"] != $temp) {
         if($mcq==false){
-          echo "<p><input type=\"text\" name=\"$temp\">";
+          echo "<p><input type=\"text\" name=\"" . $temp . "\" rows=\"6\">";
         }
         echo "</p></div><div class=\"tab-pane\" id=\"home-$num\" role=\"tabpanel\" aria-labelledby=\"home-tab-$num\"><p>" . $row["QuestionText"] . "</p>";
         $mcq = false;//reset multiple choice until options are seen
@@ -76,7 +81,12 @@ if ($result->num_rows > 0) {
       }
     }
 }
+if($mcq==false){
+  echo "<p><input type=\"text\" name=\"" . $temp . "\" rows=\"6\">";
+}
 ?>
+
+</p>
   </div>
 </div>
 </form>

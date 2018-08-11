@@ -29,7 +29,7 @@ INSERT INTO `questions` (QuizID, QuestionTitle, QuestionText, QAnswer) VALUES
   (
     (SELECT QuizID FROM quizzes WHERE QuizTitle = 'Introduction to programming - Recap'),
     'recap-q1.1',
-    'In the following code, the one line starting with // is highlighted in red. What does this line mean to Java?\n    <br />\n    <code>public static void main(String[] args) {\n    double taxRate = 0.15;\n    int income = 40000;\n    int deduction = 10000;\n    /',
+    'In the following code, one line starts with //. What does this line mean to Java?\n    <br />\n    <code>public static void main(String[] args) {\n    double taxRate = 0.15;\n    int income = 40000;\n    int deduction = 10000;\n    //int hello=4; </code>',
     'This is a comment aimed at the human reader. Java ignores such comments.'
   );
 
