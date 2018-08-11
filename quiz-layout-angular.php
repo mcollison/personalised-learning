@@ -26,6 +26,7 @@ if ($result->num_rows > 0) {
 $sql = "SELECT QuestionID FROM questions WHERE QuizID=" . $_GET['quiz'];
 $result = $conn->query($sql);
 $x=0;
+//a silly function because row count wasn't working
 while($row = $result->fetch_assoc()) {
   $x++;
 }
@@ -36,8 +37,10 @@ for ($i=2;$i<=$x;$i++) {
 echo "<li class=\"nav-item\"><a class=\"nav-link\" id=\"home-tab-$i\" data-toggle=\"tab\" href=\"#home-$i\" role=\"tab\" aria-controls=\"home-$i\" aria-selected=\"true\">Question $i:</a></li>";
 }
 ?>
+</ul>
 
   <!-- Tab panes -->
+  <form>
   <div class="tab-content">
     <div class="tab-pane active" id="home-1" role="tabpanel" aria-labelledby="home-tab-1">
 <?php
@@ -61,7 +64,8 @@ if ($result->num_rows > 0) {
       }
     }
 }
-
 ?>
   </div>
+</div>
+</form>
 </div>
