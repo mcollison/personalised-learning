@@ -39,12 +39,12 @@ echo "<li class=\"nav-item\"><a class=\"nav-link\" id=\"home-tab-$i\" data-toggl
 ?>
 </ul>
 
-  <!-- Tab panes -->
-  <form>
+  <!-- Form mapping needs updating to quiz form processing -->
+  <form action="/form-processing.php">
   <div class="tab-content">
     <div class="tab-pane active" id="home-1" role="tabpanel" aria-labelledby="home-tab-1">
 <?php
-//get quiz questions
+//get quiz questions MAY NEED TO ORDER BY IF OPTIONS AREN'T RETURNED AFTER EAXG Q
 $num=2;
 $sql = "SELECT quizzes.QuizID, questions.QuestionID, questions.QuestionText, options.OptionText FROM quizzes LEFT JOIN questions ON quizzes.QuizID = questions.QuizID LEFT JOIN options ON questions.QuestionID = options.QuestionID where quizzes.QuizID=" . $_GET['quiz'] ;
 
@@ -53,14 +53,22 @@ if ($result->num_rows > 0) {
     // output data of each row
     $row = $result->fetch_assoc();
     $temp = $row["QuestionID"];
+    $mcq = false;
     echo "<p>" . $row["QuestionText"] . "</p>";
 
     while($row = $result->fetch_assoc()) {
       if ($row["QuestionID"] != $temp) {
+        if($mcq!=true){
+          echo "<input type=\"text\" name=\"$temp\">";
+        }
         echo "</div><div class=\"tab-pane\" id=\"home-$num\" role=\"tabpanel\" aria-labelledby=\"home-tab-$num\"><p>" . $row["QuestionText"] . "</p>";
+        $mcq = false;//reset multiple choice until options are seen
+        $temp = $row["QuestionID"];
         $num++;
       } else {
-        echo "<br /> <p>" . $row["OptionText"] . "</p>";
+        $mcq=true;
+        //echo "<br /> <p>" . $row["OptionText"] . "</p>";
+        echo "<br /><input type=\"radio\" name=\"$temp\" value=\"" . $row["OptionText"] . "\">" . $row["OptionText"];
       }
     }
 }
