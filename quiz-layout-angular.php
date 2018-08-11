@@ -30,7 +30,8 @@ $x=0;
 while($row = $result->fetch_assoc()) {
   $x++;
 }
-echo "<li class=\"nav-item\"><a class=\"nav-link active\" id=\"home-tab-1\" data-toggle=\"tab\" href=\"#home-$i\" role=\"tab\" aria-controls=\"home-1\" aria-selected=\"true\">Question 1:</a></li>";
+//separate statement to include 'active'
+echo "<li class=\"nav-item\"><a class=\"nav-link active\" id=\"home-tab-1\" data-toggle=\"tab\" href=\"#home-1\" role=\"tab\" aria-controls=\"home-1\" aria-selected=\"true\">Question 1:</a></li>";
 
 for ($i=2;$i<=$x;$i++) {
     // output data of each row
@@ -45,7 +46,7 @@ echo "<li class=\"nav-item\"><a class=\"nav-link\" id=\"home-tab-$i\" data-toggl
     <div class="tab-pane active" id="home-1" role="tabpanel" aria-labelledby="home-tab-1">
 <?php
 //get quiz questions MAY NEED TO ORDER BY IF OPTIONS AREN'T RETURNED AFTER EAXG Q
-$num=2;
+$num=2;//start from 2 as first is listed separate for 'action' attribute
 $sql = "SELECT quizzes.QuizID, questions.QuestionID, questions.QuestionText, options.OptionText FROM quizzes LEFT JOIN questions ON quizzes.QuizID = questions.QuizID LEFT JOIN options ON questions.QuestionID = options.QuestionID where quizzes.QuizID=" . $_GET['quiz'] ;
 
 $result = $conn->query($sql);
@@ -58,17 +59,20 @@ if ($result->num_rows > 0) {
 
     while($row = $result->fetch_assoc()) {
       if ($row["QuestionID"] != $temp) {
-        if($mcq!=true){
-          echo "<input type=\"text\" name=\"$temp\">";
+        if($mcq==false){
+          echo "<p><input type=\"text\" name=\"$temp\">";
         }
-        echo "</div><div class=\"tab-pane\" id=\"home-$num\" role=\"tabpanel\" aria-labelledby=\"home-tab-$num\"><p>" . $row["QuestionText"] . "</p>";
+        echo "</p></div><div class=\"tab-pane\" id=\"home-$num\" role=\"tabpanel\" aria-labelledby=\"home-tab-$num\"><p>" . $row["QuestionText"] . "</p>";
         $mcq = false;//reset multiple choice until options are seen
         $temp = $row["QuestionID"];
         $num++;
       } else {
-        $mcq=true;
         //echo "<br /> <p>" . $row["OptionText"] . "</p>";
+        if($mcq==false){
+          echo "<p>";
+        }
         echo "<br /><input type=\"radio\" name=\"$temp\" value=\"" . $row["OptionText"] . "\">" . $row["OptionText"];
+        $mcq=true;
       }
     }
 }
