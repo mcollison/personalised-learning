@@ -23,15 +23,18 @@ if ($result->num_rows > 0) {
 <ul class="nav nav-tabs" id="myTab" role="tablist">
 
 <?php
-$sql = "SELECT count(QuestionID) FROM questions WHERE QuizID=" . $_GET['quiz'];
+$sql = "SELECT QuestionID FROM questions WHERE QuizID=" . $_GET['quiz'];
 $result = $conn->query($sql);
-
-echo $result;
-
-for ($i=1;$i=<$result;$i++) {
-    // output data of each row
+$x=0;
+while($row = $result->fetch_assoc()) {
+  $x++;
 }
-echo "<li class=\"nav-item\"><a class=\"nav-link active\" id=\"home-tab-$i\" data-toggle=\"tab\" href=\"#home-$i\" role=\"tab\" aria-controls=\"home-$i\" aria-selected=\"true\">Question $i:</a></li>"
+echo "<li class=\"nav-item\"><a class=\"nav-link active\" id=\"home-tab-1\" data-toggle=\"tab\" href=\"#home-$i\" role=\"tab\" aria-controls=\"home-1\" aria-selected=\"true\">Question 1:</a></li>";
+
+for ($i=2;$i<=$x;$i++) {
+    // output data of each row
+echo "<li class=\"nav-item\"><a class=\"nav-link\" id=\"home-tab-$i\" data-toggle=\"tab\" href=\"#home-$i\" role=\"tab\" aria-controls=\"home-$i\" aria-selected=\"true\">Question $i:</a></li>";
+}
 ?>
 
   <!-- Tab panes -->
