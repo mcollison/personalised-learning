@@ -1,12 +1,10 @@
 <?php
 //session_start(); //Starts PhP Session
-//* Database credentials. Assuming you are running MySQL
-//server with default setting (user 'root' with no password)
-//https://www.tutorialspoint.com/php/php_mysql_login.htm*/
-define('DB_SERVER', 'db.cs.ncl.ac.uk');
-define('DB_USERNAME', 'ComputingIA');
-define('DB_PASSWORD', 'Email r.crosby for password');
-define('DB_NAME', 'ComputingIA');
+//* Database credentials.*/
+define('DB_SERVER', 'homepages.cs.ncl.ac.uk');
+define('DB_USERNAME', 'b5038039');
+define('DB_PASSWORD', 'Doze=IreAnts');
+define('DB_NAME', 'b5038039');
 
 /* Attempt to connect to MySQL database */
 $conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);

@@ -7,9 +7,12 @@ include 'navbar.php';
 
 <?php
 if (isset($_GET['quiz'])) {
-    include 'quiz-layout-static.php';
+  if (!empty($_POST)){
+    include 'quiz-processing.php';
+  }
+  include 'results-layout-static.php';
 } else {
-    include 'quizzes-summary.php';
+  include 'results-summary.php';
 }
 ?>
 
