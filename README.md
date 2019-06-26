@@ -1,2 +1,3 @@
 # personalised-learning
-landing page should be set to quizzes.php
+Landing page should be quizzes.php.
+Database needs to be populated and username, dbname and password should be updated in connect.php before deployment. 
